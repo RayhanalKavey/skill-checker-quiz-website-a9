@@ -3,18 +3,30 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
   return (
-    <nav>
-      <NavLink className="nav-link" to="/home">
-        Home
-      </NavLink>
+    <nav className="nav-bar flex text-xl justify-between items-center px-10 h-[5rem]">
+      <NavLink to="/">Skill Checker</NavLink>
+      <div>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-link" : undefined)}
+          to="/home"
+        >
+          Home
+        </NavLink>
 
-      <NavLink className="nav-link" to="/statistics">
-        Statistics
-      </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-link" : undefined)}
+          to="/statistics"
+        >
+          Statistics
+        </NavLink>
 
-      <NavLink className="nav-link" to="/blog">
-        Blog
-      </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-link" : undefined)}
+          to="/blog"
+        >
+          Blog
+        </NavLink>
+      </div>
     </nav>
   );
 };

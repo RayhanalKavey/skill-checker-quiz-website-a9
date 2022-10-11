@@ -1,0 +1,14 @@
+.nav-bar {
+  /* height: 3rem; */
+  color: #f8f5e7;
+  background-color: #ad7b43;
+}
+.nav-bar a {
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  border-radius: 8px;
+}
+.active-link {
+  color: #e6d0b7;
+  border: 1px solid #f8f5e7;
+}
