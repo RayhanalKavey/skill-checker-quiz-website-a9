@@ -10,7 +10,8 @@ const Quiz = () => {
   // console.log(questions);
   return (
     <div>
-      <h4 className="text-4xl text-center pt-10 ">Skills in {name}</h4>
+      <h4 className="text-4xl text-center pt-10 mb-3 ">Skills in {name}</h4>
+      <hr className="w-3/5 border mx-auto " />
       <div className="w-2/3 mx-auto">
         {questions.map((questionAns, index) => (
           <QsnAns

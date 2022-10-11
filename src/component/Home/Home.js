@@ -9,12 +9,12 @@ const Home = () => {
   return (
     <div className="container mx-auto my-10">
       {/*Home Header  */}
-      <div className="home-header grid grid-cols-4 shadow-xl rounded-lg p-2 mb-10">
-        <div className="col-span-1">
-          <img className="w-[100%] rounded-lg	" src={homeImg} alt="" />
+      <div className="home-header grid lg:grid-cols-5 shadow-xl rounded-lg p-2 mb-10">
+        <div className="lg:col-span-2">
+          <img className="w-[100%] h-[100%] rounded-lg	 " src={homeImg} alt="" />
         </div>
-        <div className="col-span-3 p-5 ">
-          <h2 className="text-2xl font-bold">
+        <div className="lg:col-span-3 p-5 ">
+          <h2 className="text-2xl font-bold ">
             Most Popular Web Development Interview Questions and Answers for
             2022
           </h2>
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </div>
       {/* Topics Card */}
-      <div className="grid grid-cols-2">
+      <div className="grid lg:grid-cols-2">
         {topics.map((topic) => (
           <Topic topic={topic} key={topic.id}></Topic>
         ))}
