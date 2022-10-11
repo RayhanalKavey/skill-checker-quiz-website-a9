@@ -15,7 +15,7 @@ const Topic = ({ topic }) => {
           className="px-4 py-2 mt-5 inline-block rounded-lg"
           to={`/topic/${id}`}
         >
-          Check Skills
+          <button> Check Skills</button>
         </Link>
       </div>
 

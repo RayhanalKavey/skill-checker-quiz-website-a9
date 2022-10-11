@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import QsnAns from "../QsnAns/QsnAns";
+import "./Quiz.css";
 
 const Quiz = () => {
   const quiz = useLoaderData();
@@ -9,10 +10,17 @@ const Quiz = () => {
   // console.log(questions);
   return (
     <div>
-      <h4>Quiz will be displayed here</h4>
-      {questions.map((questionAns) => (
-        <QsnAns questionAns={questionAns} key={questionAns.id}></QsnAns>
-      ))}
+      <h4 className="text-4xl text-center pt-10 ">Skills in {name}</h4>
+      <div className="w-2/3 mx-auto">
+        {questions.map((questionAns, index) => (
+          <QsnAns
+            questionAns={questionAns}
+            key={questionAns.id}
+            index={index}
+            nameTopic={name}
+          ></QsnAns>
+        ))}
+      </div>
     </div>
   );
 };

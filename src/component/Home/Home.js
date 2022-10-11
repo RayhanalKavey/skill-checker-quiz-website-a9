@@ -9,10 +9,7 @@ const Home = () => {
   return (
     <div className="container mx-auto my-10">
       {/*Home Header  */}
-      <div
-        // style={{ backgroundImage: `url('${}')` }}
-        className="home-header grid grid-cols-4 shadow-xl rounded-lg p-2 mb-10"
-      >
+      <div className="home-header grid grid-cols-4 shadow-xl rounded-lg p-2 mb-10">
         <div className="col-span-1">
           <img className="w-[100%] rounded-lg	" src={homeImg} alt="" />
         </div>
