@@ -1,10 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Topic = ({ topics }) => {
-  const { id, name, logo, total } = topics;
+const Topic = ({ topic }) => {
+  // console.log(topic);
+  const { id, name, logo, total } = topic;
   return (
-    <div>
-      <h4>This topic</h4>
+    <div className="border rounded">
+      <p>topic ID: {id}</p>
+      <p>Name: {name}</p>
+      <p>Logo: {logo}</p>
+      <p>Total: {total}</p>
+      <Link to={`/topic/${id}`}>
+        <button>Start Practice</button>
+      </Link>
     </div>
   );
 };
