@@ -1,0 +1,12 @@
+.topic-card {
+  border: 1px solid #392a0e;
+}
+.topic-card a {
+  background-color: #ad7b43;
+  border: 1px solid #392a0e;
+  color: #f8f5e7;
+}
+.topic-card a:hover {
+  background-color: #e6d0b7;
+  color: #392a0e;
+}
