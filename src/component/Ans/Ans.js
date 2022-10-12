@@ -4,7 +4,7 @@ const Ans = ({ option, id, handleSelect }) => {
   return (
     <div className="flex items-center gap-3 mb-5">
       <input
-        onClick={() => handleSelect(option)}
+        onClick={() => handleSelect(option, id)}
         type="radio"
         name={id}
       ></input>

@@ -5,22 +5,30 @@ import { EyeIcon } from "@heroicons/react/24/solid";
 import Ans from "../Ans/Ans";
 import toast, { Toaster } from "react-hot-toast";
 
-const QsnAns = ({ questionAns, index }) => {
-  // const [answer, setAnswer] = useState("");
+const QsnAns = ({ questionAns, index, correct, wrong }) => {
+  const [corrAns, setCorrAns] = correct;
+  const [wrongAns, setWrongAns] = wrong;
+  const [alreadyAnswered, setAlreadyAnswered] = useState([]);
 
   const { options, id, question, correctAnswer } = questionAns;
+  // console.log(questionAns); //here we have individual question which has a unique id
   // Correct ans handler
   const handleCorrectAns = () => {
     toast.success(`The correct answer is: ${correctAnswer}`, {
-      autoClose: 500,
+      autoClose: 600,
     });
   };
   // Justify the answer
-  const handleSelect = (option) => {
-    if (option === correctAnswer) {
-      toast.success("Correct answer", { autoClose: 500 });
-    } else {
-      toast.error("Wrong answer", { autoClose: 500 });
+  const handleSelect = (option, ID) => {
+    if (!alreadyAnswered.includes(ID)) {
+      if (option === correctAnswer) {
+        setCorrAns(corrAns + 1);
+        toast.success("Correct answer", { autoClose: 500 });
+      } else {
+        setWrongAns(wrongAns + 1);
+        toast.error("Wrong answer", { autoClose: 500 });
+      }
+      setAlreadyAnswered([...alreadyAnswered, ID]);
     }
   };
   return (
