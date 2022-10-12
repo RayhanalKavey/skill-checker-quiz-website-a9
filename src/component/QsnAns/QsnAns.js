@@ -17,7 +17,7 @@ const QsnAns = ({ questionAns, index, nameTopic }) => {
   return (
     <div
       style={{ backgroundImage: `url('${qsnBgImg}')` }}
-      className="qsn-container m-10 px-8 p-10 rounded-lg shadow-2xl text-[#f9f8f0]"
+      className="qsn-container m-10 px-8 p-10 rounded-lg shadow-2xl text-[#f9f8f0] "
     >
       {/*Questions */}
 
@@ -26,7 +26,7 @@ const QsnAns = ({ questionAns, index, nameTopic }) => {
       </h2>
 
       {/* Options */}
-      <div className="lg:flex justify-between">
+      <div className="lg:flex justify-between relative">
         <div className="w-2/3">
           {options.map((option, index) => (
             <form className="flex items-center gap-3 mb-5" key={index}>
@@ -42,25 +42,21 @@ const QsnAns = ({ questionAns, index, nameTopic }) => {
           ))}
         </div>
         {/* Display the correct ans when clicked the eye button */}
-        <div>
-          <div className="lg:flex gap-3 justify-start flex-row-reverse	">
-            <div>
-              <EyeIcon
-                onClick={handleCorrect}
-                className="h-7 cursor-pointer w-6  text-[#f9f8f0]"
-              />
-            </div>
-            {/* <p className={` items ${cart.length === 6 ? `green-cart` : `purple-cart`}`}>
-       Selected Items: {cart.length}</p> */}
 
-            <div
-              className={` border p-2 rounded-lg ${
-                correctAns ? `block` : `hidden`
-              }`}
-            >
-              <span className="font-semibold uppercase">Correct answer:</span>{" "}
-              {correctAnswer}
-            </div>
+        <div className="lg:flex gap-3 justify-start flex-row-reverse 	">
+          <div>
+            <EyeIcon
+              onClick={handleCorrect}
+              className="h-7 cursor-pointer w-6  text-[#f9f8f0]"
+            />
+          </div>
+          <div
+            className={` border p-2 rounded-lg absolute  lg:top-[2rem]  lg:right-0  bg-[#ad7b43] ${
+              correctAns ? `block` : `hidden`
+            }`}
+          >
+            <span className="font-semibold uppercase">Correct answer:</span>{" "}
+            {correctAnswer}
           </div>
         </div>
       </div>
