@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Topic.css";
 const Topic = ({ topic }) => {
-  // console.log(topic);
   const { id, name, logo, total } = topic;
   return (
     <div className="topic-card  items-center col-span-1 rounded-lg bg-[#ECD6BF] p-3 grid grid-cols-2 m-5">
@@ -19,7 +18,7 @@ const Topic = ({ topic }) => {
         </Link>
       </div>
 
-      <img className="w-full 	" src={logo} alt="topic related logo" />
+      <img className="w-full" src={logo} alt="topic related logo" />
     </div>
   );
 };

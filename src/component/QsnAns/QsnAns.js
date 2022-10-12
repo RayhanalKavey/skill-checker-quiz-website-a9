@@ -1,18 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./QsnAns.css";
 import qsnBgImg from "../../media/image/background-img.jpg";
 import { EyeIcon } from "@heroicons/react/24/solid";
+import Ans from "../Ans/Ans";
+import { toast } from "react-toastify";
 
-const QsnAns = ({ questionAns, index, nameTopic }) => {
-  const [answer, setAnswer] = useState("");
+const QsnAns = ({ questionAns, index }) => {
+  // const [answer, setAnswer] = useState("");
+
   const [correctAns, setCorrectAns] = useState(false);
   const { options, id, question, correctAnswer } = questionAns;
   // Correct ans handler
   const handleCorrect = () => {
     setCorrectAns(!correctAns);
   };
-  const handleSelect = (event) => {
-    console.log("clicked", event.target.value);
+  // Justify the answer
+  const handleSelect = (option) => {
+    if (option === correctAnswer) {
+      toast.success("Correct answer", { autoClose: 500 });
+
+      alert("Correct answer");
+    } else {
+      alert("Wrong answer");
+      toast.warn("Wrong answer", { autoClose: 500 });
+    }
   };
   return (
     <div
@@ -28,17 +39,13 @@ const QsnAns = ({ questionAns, index, nameTopic }) => {
       {/* Options */}
       <div className="lg:flex justify-between relative">
         <div className="w-2/3">
-          {options.map((option, index) => (
-            <form className="flex items-center gap-3 mb-5" key={index}>
-              <input
-                type="radio"
-                name={nameTopic}
-                id={id}
-                value={option}
-                onChange={handleSelect}
-              />
-              <label htmlFor={id}>{option}</label>
-            </form>
+          {options.map((option, idx) => (
+            <Ans
+              option={option}
+              key={idx}
+              id={id}
+              handleSelect={handleSelect}
+            ></Ans>
           ))}
         </div>
         {/* Display the correct ans when clicked the eye button */}
