@@ -12,4 +12,4 @@ This is the best interview questions tutorial for someone preparing for a job in
 
 ---
 
-## Live website link [here](https://github.com/facebook/create-react-app).
+## Live website link [here](https://skill-checker-react-project.netlify.app/).
