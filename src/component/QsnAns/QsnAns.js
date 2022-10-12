@@ -8,11 +8,12 @@ import toast, { Toaster } from "react-hot-toast";
 const QsnAns = ({ questionAns, index }) => {
   // const [answer, setAnswer] = useState("");
 
-  const [correctAns, setCorrectAns] = useState(false);
   const { options, id, question, correctAnswer } = questionAns;
   // Correct ans handler
-  const handleCorrect = () => {
-    setCorrectAns(!correctAns);
+  const handleCorrectAns = () => {
+    toast.success(`The correct answer is: ${correctAnswer}`, {
+      autoClose: 500,
+    });
   };
   // Justify the answer
   const handleSelect = (option) => {
@@ -29,41 +30,30 @@ const QsnAns = ({ questionAns, index }) => {
     >
       {/*Questions */}
 
-      <h2 className="text-2xl mt-7 mb-10 ">
-        Quiz {index + 1}: {question}
-      </h2>
-
-      {/* Options */}
-      <div className="lg:flex justify-between relative">
-        <div className="w-2/3">
-          {options.map((option, idx) => (
-            <Ans
-              option={option}
-              key={idx}
-              id={id}
-              handleSelect={handleSelect}
-            ></Ans>
-          ))}
-        </div>
-        {/* Display the correct ans when clicked the eye button */}
-
-        <div className="lg:flex gap-3 justify-start flex-row-reverse 	">
-          <div>
-            <EyeIcon
-              onClick={handleCorrect}
-              className="h-7 cursor-pointer w-6  text-[#f9f8f0]"
-            />
-          </div>
-          <div
-            className={` border p-2 rounded-lg absolute  lg:top-[2rem]  lg:right-0  bg-[#ad7b43] ${
-              correctAns ? `block` : `hidden`
-            }`}
-          >
-            <span className="font-semibold uppercase">Correct answer:</span>{" "}
-            {correctAnswer}
-          </div>
+      <div className="flex justify-between">
+        <h2 className="text-2xl mt-7 mb-10 ">
+          Quiz {index + 1}: {question}
+        </h2>
+        <div>
+          <EyeIcon
+            onClick={handleCorrectAns}
+            className="h-7 cursor-pointer w-6  text-[#f9f8f0]"
+          />
         </div>
       </div>
+      {/* Options */}
+
+      <div className="w-2/3">
+        {options.map((option, idx) => (
+          <Ans
+            option={option}
+            key={idx}
+            id={id}
+            handleSelect={handleSelect}
+          ></Ans>
+        ))}
+      </div>
+      {/* Display the correct ans when clicked the eye button */}
     </div>
   );
 };

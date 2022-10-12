@@ -27,8 +27,8 @@ const Quiz = () => {
         style={{ backgroundImage: `url('${qsnBgImg}')` }}
         className=" py-8 pl-6 pr-10 rounded-lg self-start	m-4 lg:w-96 "
       >
-        <h2 className="text-xl ">Summary</h2>
-        <p>Correct answer: </p>
+        <h2 className="text-xl mb-4 uppercase">Summary</h2>
+        <p className="mb-2">Correct answer: </p>
         <p>Wrong answer: </p>
       </div>
     </div>
