@@ -5,7 +5,6 @@ import homeImg from "../../media/image/header-image.jpg";
 import "./Home.css";
 const Home = () => {
   const topics = useContext(TopicsContext);
-  // console.log(topics);
   return (
     <div className="container mx-auto my-10">
       {/*Home Header  */}
