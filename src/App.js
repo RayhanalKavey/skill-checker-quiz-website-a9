@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./outlet/Main";
@@ -6,8 +5,8 @@ import Home from "./component/Home/Home";
 import Statistics from "./component/Statistics/Statistics";
 import Blog from "./component/Blog/Blog";
 import ErrorPage from "./component/ErrorPage/ErrorPage";
-import Topic from "./component/Topic/Topic";
 import Quiz from "./component/Quiz/Quiz";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,6 +35,7 @@ function App() {
   return (
     <div>
       <RouterProvider router={router}></RouterProvider>
+      <Toaster />
     </div>
   );
 }

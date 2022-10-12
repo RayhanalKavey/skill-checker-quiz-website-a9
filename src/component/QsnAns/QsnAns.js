@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./QsnAns.css";
 import qsnBgImg from "../../media/image/background-img.jpg";
 import { EyeIcon } from "@heroicons/react/24/solid";
 import Ans from "../Ans/Ans";
-import { toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 
 const QsnAns = ({ questionAns, index }) => {
   // const [answer, setAnswer] = useState("");
@@ -18,11 +18,8 @@ const QsnAns = ({ questionAns, index }) => {
   const handleSelect = (option) => {
     if (option === correctAnswer) {
       toast.success("Correct answer", { autoClose: 500 });
-
-      alert("Correct answer");
     } else {
-      alert("Wrong answer");
-      toast.warn("Wrong answer", { autoClose: 500 });
+      toast.error("Wrong answer", { autoClose: 500 });
     }
   };
   return (

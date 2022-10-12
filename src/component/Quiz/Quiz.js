@@ -13,7 +13,7 @@ const Quiz = () => {
       <div className="">
         <h4 className="text-4xl text-center pt-10 mb-3 ">Skills in {name}</h4>
         <hr className="w-3/5 border mx-auto " />
-        <div className="  lg:w-2/3 mx-auto">
+        <div className="  lg:w-4/5 mx-auto">
           {questions.map((questionAns, index) => (
             <QsnAns
               questionAns={questionAns}
@@ -25,7 +25,7 @@ const Quiz = () => {
       </div>
       <div
         style={{ backgroundImage: `url('${qsnBgImg}')` }}
-        className=" py-8 pl-6 pr-10 rounded-lg self-start	m-4q "
+        className=" py-8 pl-6 pr-10 rounded-lg self-start	m-4 lg:w-96 "
       >
         <h2 className="text-xl ">Summary</h2>
         <p>Correct answer: </p>
