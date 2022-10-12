@@ -22,9 +22,13 @@ const Statistics = () => {
         Questions available per topic:
       </h4>
       <hr className="w-2/3 mx-auto" />
-
-      <div className="w-1/2 text-center mx-auto my-20 text-[#392a0e] ">
-        <LineChart width={600} height={340} data={topicsData}>
+      <ResponsiveContainer
+        className="mx-auto my-20  text-[#392a0e]"
+        width="80%"
+        height="80%"
+        aspect={3}
+      >
+        <LineChart width={600} height={600} data={topicsData}>
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
@@ -32,7 +36,7 @@ const Statistics = () => {
 
           <Line type="monotone" dataKey="total" stroke="#392a0e" />
         </LineChart>
-      </div>
+      </ResponsiveContainer>
     </div>
   );
 };

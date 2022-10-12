@@ -29,6 +29,8 @@ const QsnAns = ({ questionAns, index, correct, wrong }) => {
         toast.error("Wrong answer", { autoClose: 500 });
       }
       setAlreadyAnswered([...alreadyAnswered, ID]);
+    } else {
+      toast.success("Already answered", { autoClose: 500 });
     }
   };
   return (
