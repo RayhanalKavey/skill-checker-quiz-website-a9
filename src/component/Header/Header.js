@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
   return (
-    <nav className="nav-bar flex text-xl justify-between items-center px-10 h-[5rem]">
+    <nav className="nav-bar flex text-xl justify-between items-center px-10 h-[5rem] shadow-xl">
       <NavLink to="/">Skill Checker</NavLink>
       <div>
         <NavLink
